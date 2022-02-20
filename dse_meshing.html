@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>DSE meshing</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/dse.css" />
+	</head>
+	<body class="landing">
+			<!-- Two -->
+				<section id="two" class="wrapper style2 special">
+					<div class="container">
+						<header class="major">
+							<h2>Learning Delaunay Surface Elements for Mesh Reconstruction</h2>
+							<p>Marie-Julie Rakotosaona<sup>1</sup>, Paul Guerrero<sup>2</sup>, Noam Aigerman<sup>2</sup>,
+								 Niloy J. Mitra<sup>2,3</sup>, Maks Ovsjanikov<sup>1</sup></p>
+							<ul class="actions">
+								<li><sup>1</sup>LIX, Ecole Polytechnique, IP Paris</li>
+								<li><sup>2</sup>Adobe Research</li>
+								<li><sup>3</sup>University College London</li>
+							</ul>
+
+						</header>
+						<div class="row 150%">
+								<div class="image fit captioned_teaser">
+									<img src="images/dse_meshing_teaser.png"  alt="" />
+									<!--<h3>Lorem ipsum dolor sit amet.</h3>-->
+								</div>
+						</div>
+						<div class="feature-grid">
+							<div class="featurev2">
+							<div class="content">
+						<p> We present a method for mesh reconstruction from point clouds. We combine Delaunay triangulations with learned local parameterizations to obtain a higher-quality mesh than the current state-of-the-art.
+    			Bad (non-manifold) triangles are shown in red. We compare to PointTriNet [1] and IER Meshing [2]. </p>
+				</div>
+				</div>
+				</div>
+				<div class="feature-grid">
+					<div class="featurev3">
+					<div class="content">
+				 [1] Nicholas Sharp and Maks Ovsjanikov. Pointtrinet: Learned triangulation of 3d point sets. ECCV, 2020
+		</div>
+		</div>
+		<div class="featurev3">
+		<div class="content">
+			[2] Minghua Liu, Xiaoshuai Zhang, and Hao Su. Meshing point clouds with predicted intrinsic-extrinsic ratio guidance. ECCV, 2020.
+</div>
+</div>
+		</div>
+					</div>
+				</section>
+			<!-- Three -->
+				<section id="three" class="wrapper style1">
+					<div class="container">
+						<header class="major special">
+							<h2>Abstract</h2>
+							<!--<p>Feugiat sed lorem ipsum magna</p>-->
+						</header>
+						<div class="feature-grid">
+							<div class="featurev2">
+								<!--<div class="image rounded"><img src="images/pic04.jpg" alt="" /></div>-->
+								<div class="content">
+									<!--<header>
+										<h4>Lorem ipsum</h4>
+										<p>Lorem ipsum dolor sit</p>
+									</header>-->
+									<p>We present a method for reconstructing triangle meshes from point clouds. Existing learning-based methods for mesh reconstruction mostly generate triangles individually, making it hard to create manifold meshes. We leverage the properties of 2D Delaunay triangulations to construct a mesh from manifold surface elements. Our method first estimates local geodesic neighborhoods around each point. We then perform a 2D projection of these neighborhoods using a learned logarithmic map. A Delaunay triangulation in this 2D domain is guaranteed to produce a manifold patch, which we call a Delaunay surface element. We synchronize the local 2D projections of neighboring elements to maximize the manifoldness of the reconstructed mesh. Our results show that we achieve better overall manifoldness of our reconstructed meshes than current methods to reconstruct meshes with arbitrary topology.
+									</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</section>
+
+				<!--
+
+					<section id="three" class="wrapper style2">
+						<div class="container">
+							<header class="major special">
+								<h2>Dataset</h2>
+							</header>
+
+							<div class="feature-grid">
+								<div class="feature">
+									<div class="image bis"><img src="images/pointcleannet_dataset.png" alt="" /></div>
+									<div class="content">
+
+									<p>	We present PointDenoisingBenchmark dataset. Our dataset features  28 different shapes, which we split into
+18 training shapes and 10 test shapes.
+
+<ul class="list">
+	<li><B>PointDenoisingBenchmark for outliers removal:</B> contains noisy point clouds with different levels of gaussian noise and the corresponding clean ground truths.</li>
+	<li><B>PointDenoisingBenchmark for denoising:</B> contains noisy point clouds with different levels of noise and density of outliers and the corresponding clean ground truths.</li>
+</ul></p>
+
+<ul class="actions">
+	<li><a href="https://nuage.lix.polytechnique.fr/index.php/s/xSRrTNmtgqgeLGa" class="button small">Dataset</a></li>
+</ul>
+
+									</div>
+								</div>
+
+						</div>
+					</section>
+
+-->
+
+				<!-- Three -->
+					<section id="three" class="wrapper style2">
+						<div class="container">
+							<header class="major special">
+								<h2>Overview</h2>
+								<!--<p>Feugiat sed lorem ipsum magna</p>-->
+							</header>
+							<div class="feature-grid">
+								<div class="featurev2">
+									<!--<div class="image rounded"><img src="images/pic04.jpg" alt="" /></div>-->
+									<div class="content">
+										<p>We present Learning Delaunay Surface Elements for Mesh Reconstruction (DSE meshing), for any point in an input point cloud,
+											 we select the k-nearest neighbors and extract the subset of points that are in the geodesic neighborhood of the center point,
+											  using a learned classification network. A projection network then estimates a log map projection of the points into a 2D embedding,
+												 where we can apply Delaunay Triangulation to get a DSE.
+</p>
+
+
+<div class="row 150%">
+		<div class="image fit captioned_architecture">
+			<img src="images/overview_dse.png"  alt="" />
+		</div>
+
+</div>
+ <p>We show qualitative comparison of our DSE meshing to state of the art methods below. </p>
+										<div class="row 150%">
+												<div class="image fit captioned_results">
+													<img src="images/dse_qualitative.png"  alt="" />
+													<!--<h3>Lorem ipsum dolor sit amet.</h3>-->
+												</div>
+
+										</div>
+ <p>We evaluate our method on non uniformly sampled point clouds. Shapes are sampled more densely to the left and more coarsely to the right. We can see that methods struggle to reconstruct the coarsely sampled parts of the point cloud. While our method also has slightly more errors in the coarsely sampled regions, the mesh quality drops by a much smaller amount from densely to coarsely sampled regions.  </p>
+										<div class="row 150%">
+												<div class="image fit captioned_results">
+													<img src="images/dse_non_uni.png"  alt="" />
+													<!--<h3>Lorem ipsum dolor sit amet.</h3>-->
+												</div>
+
+										</div>
+										<!--<header>
+											<h4>Lorem ipsum</h4>
+											<p>Lorem ipsum dolor sit</p>
+										</header>-->
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</section>
+
+
+
+			<!-- Two -->
+				<section id="two" class="wrapper style1">
+					<div class="container">
+						<header class="major">
+							<h2>Bibtex</h2>
+							<!--<p>Maecenas vitae tellus feugiat eleifend</p>-->
+						</header>
+						<div class="feature-grid">
+						<div class="featurev2">
+							<div class="content">
+							<p>If you use our work, please cite our paper:</p>
+						</div>
+						<pre><code>
+@InProceedings{Rakotosaona_2021_CVPR,
+    author    = {Rakotosaona, Marie-Julie and Guerrero, Paul and Aigerman, Noam and Mitra, Niloy J. and Ovsjanikov, Maks},
+    title     = {Learning Delaunay Surface Elements for Mesh Reconstruction},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {22-31}
+}
+						</code></pre>
+						</div>
+						</div>
+
+					</div>
+				</section>
+
+				<!-- Three
+					<section id="three" class="wrapper style1">
+						<div class="container">
+							<header class="major special">
+								<h2>Acknowledgements</h2>
+
+							</header>
+							<div class="feature-grid">
+								<div class="featurev2">
+
+									<div class="content">
+
+										<p>Parts of this work were supported by the KAUST OSR Award No. CRG-2017-3426, a gift from the
+											 NVIDIA Corporation, the ERC Starting Grants EXPROTEA (StG-2017-758800) and SmartGeometry
+											  (StG-2013-335373), a Google Faculty Award, and gifts from Adobe.	</p>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</section>
+					-->
+					<!-- Three -->
+						<section id="three" class="wrapper style2">
+							<div class="container">
+								<header class="major">
+									<h2>Links</h2>
+
+								</header>
+
+								<div class="feature-grid">
+									<div class="featurev2">
+										<div class="content">
+								<ul class="actions">
+									<li><a href="https://arxiv.org/pdf/2012.01203.pdf" class="button big">Paper</a></li>
+									<li><a href="https://github.com/mrakotosaon/dse-meshing" class="button big">Code</a></li>
+									<li><a href="https://www.rsipvision.com/CVPR2021-Monday/14/" class="button">CVPR daily article</a></li>
+									<!--<li><a href="https://nuage.lix.polytechnique.fr/index.php/s/xSRrTNmtgqgeLGa" class="button big">Dataset & pretrained models</a></li>-->
+								</ul>
+							</div>
+							</div>
+							</div>
+							</div>
+						</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

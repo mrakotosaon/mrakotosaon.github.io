@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<!--
+	Spatial by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>PointCleanNet</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="assets/css/pointcleannet.css" />
+	</head>
+	<body class="landing">
+			<!-- Two -->
+				<section id="two" class="wrapper style2 special">
+					<div class="container">
+						<header class="major">
+							<h2>PointCleanNet:<br /> Learning to Denoise and Remove Outliers from Dense Point Clouds</h2>
+							<p>Marie-Julie Rakotosaona<sup>1</sup>, Vittorio La Barbera<sup>2</sup>, Paul Guerrero<sup>2</sup>,
+								 Niloy J. Mitra<sup>2,3</sup>, Maks Ovsjanikov<sup>1</sup></p>
+							<ul class="actions">
+								<li><sup>1</sup>LIX, Ecole Polytechnique, CNRS</li>
+								<li><sup>2</sup>University College London</li>
+								<li><sup>3</sup>Adobe Research</li>
+							</ul>
+
+						</header>
+						<div class="row 150%">
+								<div class="image fit captioned_teaser">
+									<img src="images/pointcleannet_teaser.png"  alt="" />
+									<!--<h3>Lorem ipsum dolor sit amet.</h3>-->
+								</div>
+
+						</div>
+
+					</div>
+				</section>
+			<!-- Three -->
+				<section id="three" class="wrapper style1">
+					<div class="container">
+						<header class="major special">
+							<h2>Abstract</h2>
+							<!--<p>Feugiat sed lorem ipsum magna</p>-->
+						</header>
+						<div class="feature-grid">
+							<div class="featurev2">
+								<!--<div class="image rounded"><img src="images/pic04.jpg" alt="" /></div>-->
+								<div class="content">
+									<!--<header>
+										<h4>Lorem ipsum</h4>
+										<p>Lorem ipsum dolor sit</p>
+									</header>-->
+									<p>Point clouds obtained with 3D scanners or by image based reconstruction techniques are often
+									corrupted with significant amount of noise and outliers. Traditional methods for point cloud denoising
+									largely rely on local surface fitting (e.g. jets or MLS surfaces), local or non‐local averaging or on
+									statistical assumptions about the underlying noise model. In contrast, we develop a simple data‐driven
+									method for removing outliers and reducing noise in unordered point clouds. We base our approach on a deep
+									learning architecture adapted from PCPNet, which was recently proposed for estimating local 3D shape
+									properties in point clouds. Our method first classifies and discards outlier samples, and then estimates
+									correction vectors that project noisy points onto the original clean surfaces. The approach is efficient
+									and robust to varying amounts of noise and outliers, while being able to handle large densely sampled point
+									clouds. In our extensive evaluation, both on synthetic and real data, we show an increased robustness to
+									strong noise levels compared to various state‐of‐the‐art methods, enabling accurate surface reconstruction
+									from extremely noisy real data obtained by range scans. Finally, the simplicity and universality of our
+									approach makes it very easy to integrate in any existing geometry processing pipeline.
+									</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</section>
+
+
+				<!-- Three -->
+					<section id="three" class="wrapper style2">
+						<div class="container">
+							<header class="major special">
+								<h2>Dataset</h2>
+							</header>
+
+							<div class="feature-grid">
+								<div class="feature">
+									<div class="image bis"><img src="images/pointcleannet_dataset.png" alt="" /></div>
+									<div class="content">
+
+									<p>	We present PointDenoisingBenchmark dataset. Our dataset features  28 different shapes, which we split into
+18 training shapes and 10 test shapes.
+
+<ul class="list">
+	<li><B>PointDenoisingBenchmark for outliers removal:</B> contains noisy point clouds with different levels of gaussian noise and the corresponding clean ground truths.</li>
+	<li><B>PointDenoisingBenchmark for denoising:</B> contains noisy point clouds with different levels of noise and density of outliers and the corresponding clean ground truths.</li>
+</ul></p>
+
+<ul class="actions">
+	<li><a href="https://nuage.lix.polytechnique.fr/index.php/s/xSRrTNmtgqgeLGa" class="button small">Dataset</a></li>
+</ul>
+
+									</div>
+								</div>
+
+						</div>
+					</section>
+
+
+
+				<!-- Three -->
+					<section id="three" class="wrapper style1">
+						<div class="container">
+							<header class="major special">
+								<h2>Overview</h2>
+								<!--<p>Feugiat sed lorem ipsum magna</p>-->
+							</header>
+							<div class="feature-grid">
+								<div class="featurev2">
+									<!--<div class="image rounded"><img src="images/pic04.jpg" alt="" /></div>-->
+									<div class="content">
+										<p>We present PointCleanNet, a two-stage network that takes a raw point cloud and first removes outliers (top) and then
+denoises the remaining pointset (bottom). Our method, unlike many traditional approaches, is parameter-free and automatically discovers and
+preserves high-curvature features without requiring additional information about the underlying surface type or device characteristics.
+</p>
+
+
+<div class="row 150%">
+		<div class="image fit captioned_architecture">
+			<img src="images/pointClean_architecture.png"  alt="" />
+		</div>
+
+</div>
+ <p>We show
+the results of our pipeline on noisy real data (first 3 from left) and noisy synthetic data (last 3). </p>
+										<div class="row 150%">
+												<div class="image fit captioned_results">
+													<img src="images/results_plate.png"  alt="" />
+													<!--<h3>Lorem ipsum dolor sit amet.</h3>-->
+												</div>
+
+										</div>
+										<!--<header>
+											<h4>Lorem ipsum</h4>
+											<p>Lorem ipsum dolor sit</p>
+										</header>-->
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</section>
+
+
+
+			<!-- Two -->
+				<section id="two" class="wrapper style2">
+					<div class="container">
+						<header class="major">
+							<h2>Bibtex</h2>
+							<!--<p>Maecenas vitae tellus feugiat eleifend</p>-->
+						</header>
+						<p>If you use our work or our data, please cite our paper:</p>
+						<div class="feature-grid">
+						<div class="featurev2">
+						<pre><code>
+
+@article{rakotosaona2019pointcleannet,
+  title={PointCleanNet: Learning to Denoise and Remove Outliers from Dense Point Clouds},
+  author={Rakotosaona, Marie-Julie and La Barbera, Vittorio and Guerrero, Paul and Mitra, Niloy J and Ovsjanikov, Maks},
+  journal={Computer Graphics Forum},
+  year={2019}
+}
+						</code></pre>
+						</div>
+						</div>
+
+					</div>
+				</section>
+				<!-- Three -->
+					<section id="three" class="wrapper style1">
+						<div class="container">
+							<header class="major special">
+								<h2>Acknowledgements</h2>
+								<!--<p>Feugiat sed lorem ipsum magna</p>-->
+							</header>
+							<div class="feature-grid">
+								<div class="featurev2">
+									<!--<div class="image rounded"><img src="images/pic04.jpg" alt="" /></div>-->
+									<div class="content">
+
+										<p>Parts of this work were supported by the KAUST OSR Award No. CRG-2017-3426, a gift from the
+											 NVIDIA Corporation, the ERC Starting Grants EXPROTEA (StG-2017-758800) and SmartGeometry
+											  (StG-2013-335373), a Google Faculty Award, and gifts from Adobe.	</p>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</section>
+
+					<!-- Three -->
+						<section id="three" class="wrapper style2">
+							<div class="container">
+								<header class="major">
+									<h2>Links</h2>
+
+								</header>
+								<ul class="actions">
+									<li><a href="https://arxiv.org/pdf/1901.01060.pdf" class="button big">Paper</a></li>
+									<li><a href="https://github.com/mrakotosaon/pointcleannet" class="button big">Code</a></li>
+									<li><a href="https://nuage.lix.polytechnique.fr/index.php/s/xSRrTNmtgqgeLGa" class="button big">Dataset & pretrained models</a></li>
+								</ul>
+							</div>
+						</section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/skel.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
